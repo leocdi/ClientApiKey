@@ -14,8 +14,8 @@ builder.Services.AddHttpClient<IswaggerClient, swaggerClient>(client =>
     var headerValue = builder.Configuration.GetValue<string>("ApiKey");
 
     client.DefaultRequestHeaders.Add(headerName, headerValue);
-    client.BaseAddress = new Uri("https://localhost:7071/");
-
+    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("BaseEndpoint"));
+    
 });
 
 var app = builder.Build();
