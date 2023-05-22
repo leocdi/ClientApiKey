@@ -11,7 +11,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient<IswaggerClient, swaggerClient>(client =>
 {
     var headerName = "X-Api-Key";
-    var headerValue = "6655615417";
+    var headerValue = builder.Configuration.GetValue<string>("ApiKey");
 
     client.DefaultRequestHeaders.Add(headerName, headerValue);
     client.BaseAddress = new Uri("https://localhost:7071/");
