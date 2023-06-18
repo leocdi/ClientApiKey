@@ -14,6 +14,7 @@ namespace WebApplication30.Pages
 
         public void OnGet()
         {
+            throw new Exception();
         }
     }
 }
